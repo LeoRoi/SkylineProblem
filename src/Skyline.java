@@ -105,12 +105,12 @@ class Skyline extends JFrame {
             rectangleIterator(lastFigure);
     }
 
-    //rectangles are transformed into shapes to allow comparison
+    //assuming there are multiple rectangles - transform them into shapes to allow a comparison later
     void rectangleIterator(Rectangle temp){
 
         //first, transform existing figures from rectangle list
-        for(int i = 0; i < rList.size(); i++)
-            toShape(new Poly(rList.get(i).x, rList.get(i).y, rList.get(i).x + rList.get(i).w, 460));
+        for(Rectangle foo : rList)
+            toShape(new Poly(foo.x, foo.y, foo.x + foo.w, 460));
         rList.clear();
 
         //then add the last one on top
@@ -120,9 +120,8 @@ class Skyline extends JFrame {
     //merge all overlapping shapes
     void toShape(Poly temp) {
         if (!pList.isEmpty()) {
-            for (int i = 0; i < pList.size(); i++) {
-                temp = temp.merge(pList.get(i));
-            }
+            for (Poly foo : pList)
+                temp = temp.merge(foo);
 
             // temp replaces the old structure
             pList.clear();
@@ -136,7 +135,6 @@ class Skyline extends JFrame {
         if(clear){
             g.clearRect(0, 0, 1400, 460);
             clear = false;
-            return;
         }
 
         g.setColor(Color.black);
@@ -144,17 +142,18 @@ class Skyline extends JFrame {
         g.clearRect(0, 0, 1400, 459);
 
         //draw shapes
-        for (int i = 0; i < pList.size(); i++) {
-            int x[] = pList.get(i).prepareForPaint();
-            int y[] = pList.get(i).getYarray();
-            g.drawPolyline(x, y, pList.get(i).arrSize);
+        for (Poly foo : pList) {
+            int x[] = foo.prepareForPaint();
+            int y[] = foo.getYarray();
+            g.drawPolyline(x, y, foo.arrSize);
         }
 
-        for (int i = 0; i < rList.size(); i++) {
-            g.setColor(rList.get(i).color);
-            g.fillRect(rList.get(i).x, rList.get(i).y, rList.get(i).w, rList.get(i).h);
+        //draw rectangles
+        for (Rectangle foo : rList) {
+            g.setColor(foo.color);
+            g.fillRect(foo.x, foo.y, foo.w, foo.h);
             g.setColor(Color.BLACK);
-            g.drawRect(rList.get(i).x, rList.get(i).y, rList.get(i).w, rList.get(i).h);
+            g.drawRect(foo.x, foo.y, foo.w, foo.h);
         }
     }
 
