@@ -1,3 +1,6 @@
+/**
+ * represents a 2D point like A(2/4)
+ */
 class Coordinates {
 	int x, y;
 	

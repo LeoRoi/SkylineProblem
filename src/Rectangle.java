@@ -1,5 +1,8 @@
 import java.awt.Color;
 
+/**
+ * rectangle figure
+ */
 class Rectangle {
 	int x, y, w, h;
 	Color color;

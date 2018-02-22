@@ -4,6 +4,10 @@ import java.util.*;
 import java.util.List;
 import javax.swing.*;
 
+/**
+ * main
+ * Created by <kuzne4eg@gmail.com> on 11.09.2017
+ */
 class Skyline extends JFrame {
     JButton b;
     Color nowColor = Color.cyan;
