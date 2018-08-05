@@ -1,0 +1,1 @@
+Imagine NY downtown from far away, covered by smog. Skyscrapers have no longer the original color. It is difficult to tell where one ends and another begins. There is only an edgy silhouette that looks like merged rectangles.
