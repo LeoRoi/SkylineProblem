@@ -17,6 +17,7 @@ Tested with a display resolution 1680x1050 pixels.
 
 ###### Getting started
 1. clone the repository
-2. run the out/artifacts/Skyline_jar/Skyline.jar
+2. go to out/artifacts/Skyline_jar
+3. open Skyline.jar
 
 ![Screenshot](intro.jpg)
