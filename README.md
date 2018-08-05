@@ -12,7 +12,11 @@ There is a drawing space and a little control panel on the right side. The contr
 By moving the mouse with a pressed button will set edge coordinates for a skyscraper. With merge enabled only silhouettes will appear. With merge disabled a color for every shaped building can be chosen. New buildings will appear in the foreground covering existing ones. Then if the merge is checked out all skyscrapers will be forged into one shape.
 <br>
 Clear the drawing space with the according button.
+<br>
+Tested with a display resolution 1680x1050 pixels.
 
 ###### Getting started
 1. clone the repository
 2. run the out/artifacts/Skyline_jar/Skyline.jar
+
+![Screenshot](intro.jpg)
